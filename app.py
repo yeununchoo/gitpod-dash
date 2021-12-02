@@ -50,17 +50,17 @@ app.layout = html.Div(
                      options=[{'label': 'Period, Group', 'value': 'Period, Group'},
                                {'label': 'Period, Phase', 'value': 'Period, Phase'},
                                {'label': 'Period, Type', 'value': 'Period, Type'},
-                               {'label': 'Period, NumberOfShells', 'value': 'Period, NumberOfShells'},
-                               {'label': 'Period, NumberOfValence', 'value': 'Period, NumberOfValence'},
+                               {'label': 'Period, Shells', 'value': 'Period, NumberOfShells'},
+                               {'label': 'Period, Valence Electrons', 'value': 'Period, NumberOfValence'},
                                {'label': 'Group, Phase', 'value': 'Group, Phase'},
                                {'label': 'Group, Type', 'value': 'Group, Type'},
-                               {'label': 'Group, NumberOfShells', 'value': 'Group, NumberOfShells'},
-                               {'label': 'Group, NumberOfValence', 'value': 'Group, NumberOfValence'},
+                               {'label': 'Group, Shells', 'value': 'Group, NumberOfShells'},
+                               {'label': 'Group, Valence Electrons', 'value': 'Group, NumberOfValence'},
                                {'label': 'Phase, Type', 'value': 'Phase, Type'},
-                               {'label': 'Phase, NumberOfShells', 'value': 'Phase, NumberOfShells'},
-                               {'label': 'Phase, NumberOfValence', 'value': 'Phase, NumberOfValence'},
-                               {'label': 'Type, NumberOfShells', 'value': 'Type, NumberOfShells'},
-                               {'label': 'Type, NumberOfValence', 'value': 'Type, NumberOfValence'},
+                               {'label': 'Phase, Shells', 'value': 'Phase, NumberOfShells'},
+                               {'label': 'Phase, Valence Electrons', 'value': 'Phase, NumberOfValence'},
+                               {'label': 'Type, Shells', 'value': 'Type, NumberOfShells'},
+                               {'label': 'Type, Valence Electrons', 'value': 'Type, NumberOfValence'},
                                ],
                         value='Period, Group'),
         html.P("Click the button to refresh"),
@@ -152,8 +152,6 @@ def get_table(n_clicks,
                     columns={df_return.columns[0]: row + r' \ ' + col}
                     )
 
-
-    
     table_in_dash = [dash_table.DataTable(
                         id = 'table-update',
                         columns = [{"name": str(i), "id": str(i)} 
@@ -161,7 +159,6 @@ def get_table(n_clicks,
                                  in df_return.columns],
                         data = df_return.to_dict('records'), 
                         style_data = {'whiteSpace': 'nowrap'},
-                        
                         ) 
                     ]
 
