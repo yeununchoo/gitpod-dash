@@ -1,0 +1,8 @@
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+**/*.ipynb_checkpoints
+IGNORE
+venv
+*.pyc
+.DS_Store
+.env

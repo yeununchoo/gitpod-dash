@@ -13,6 +13,7 @@ df_raw.to_csv("raw.csv")
 def identity(x): return x
 
 app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div(
     className="main",
@@ -166,5 +167,7 @@ def get_table(n_clicks,
     return table_in_dash
 
 
-
-app.run_server(debug=True, host="0.0.0.0")
+if __name__ == '__main--':
+    app.run_server(debug=True)
+    
+    
